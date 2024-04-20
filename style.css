@@ -37,7 +37,3 @@ body {
     border: none;
     cursor: pointer;
 }
-
-#startButton:active {
-    background-image: url('start_button_pressed.png'); /* Pressed button image */
-}
