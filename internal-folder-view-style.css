@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lock-screen {
+    width: 425px;
+    height: 921px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.lock-screen-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-color: #eaeaea;
+}
+
+.lock-screen-background{
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.folders-container{
+    flex: 2;
+}
+
+.footer-with-icons{
+    flex: 1;
+}
+
+.new-folder-btn{
+    cursor: pointer;
+}
+
+.new-note-btn{
+    cursor: pointer
+}
+
+.note-item{
+    margin-bottom: 10px;
+    padding: 20px;
+    color: black;
+    font-size: 1.5em;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.note-btn{
+    right: 10px; /* distance from the right edge */
+    top: 50%;
+    transform: translateY(-50%); /* center it vertically */
+    width: 20px; /* square dimensions */
+    height: 20px;
+    padding: 0;
+    border: 1px solid #000; /* a simple border */
+    background-color: #fff; /* a contrasting background */
+    cursor: pointer; /* to indicate it's clickable */
+}
+

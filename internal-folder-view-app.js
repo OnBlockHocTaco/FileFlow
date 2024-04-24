@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    const addFolderBtn = document.querySelector('.new-folder-btn');
-    const folderList = document.querySelector('.folder-list');
+    const addFolderBtn = document.querySelector('.new-note-btn');
+    const folderList = document.querySelector('.note-list');
     const pastelColors = [
         '#ffd7d5', //pastel pink 
         '#ffebb7', //pastel orange
@@ -17,15 +17,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     addFolderBtn.addEventListener('click', function() {
         const newFolder = document.createElement('div');
-        newFolder.classList.add('folder-item');
-        newFolder.textContent = 'New Folder'; // You can modify this to set a specific folder name
+        newFolder.classList.add('note-item');
+        newFolder.textContent = 'New Note'; // You can modify this to set a specific folder name
         newFolder.style.backgroundColor = getRandomPastelColor(); // Set the desired color for the new folder
 
         const anchorElement = document.createElement('a');
-        anchorElement.href = 'internal-folder-view.html';
+        anchorElement.href = 'note-creation.html';
 
         const newFolderButton = document.createElement('button');
-        newFolderButton.classList.add('folder-btn');
+        newFolderButton.classList.add('note-btn');
         newFolderButton.textContent = '➡️';
 
         anchorElement.appendChild(newFolderButton)
