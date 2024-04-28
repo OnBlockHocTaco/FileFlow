@@ -31,6 +31,34 @@ document.addEventListener('DOMContentLoaded', function() {
     recognition.onresult = function(event) {
         console.log("Recognition result:", event.results[0][0].transcript);
         const transcript = event.results[0][0].transcript;
+
+        // Fetch data from the API with the transcript as input
+        fetch('https://noggin.rea.gent/distinguished-smelt-4172', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer rg_v1_scwdqh7r34un8lz15btbptzvd19g8lk85t10_ngk'
+            },
+            body: JSON.stringify({
+                input: transcript, // Use the transcript as the input
+            }),
+        })
+        .then(response => response.text()) // Convert response to text
+        .then(data => {
+            console.log("API response:", data); // Log the API response
+
+            // Redirect based on the LLM output
+            if (data.trim() === "note") {
+                const url = `note-creation.html?description=${encodeURIComponent(transcript)}`;
+                window.location.href = url;
+                // window.location.href = "note-creation.html"; // Redirect to note-creation.html
+            } else if (data.trim() === "todo") {
+                window.location.href = "todo-creation.html"; // Redirect to todo-creation.html
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching API:", error); // Handle any errors
+        });
     };
 
     startButton.addEventListener('mousedown', function() {

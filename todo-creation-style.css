@@ -130,3 +130,14 @@ input{
     cursor: pointer;
     border-radius: 50px;
 }
+
+#backButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+}
