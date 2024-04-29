@@ -11,28 +11,29 @@
         <div class="lock-screen-background">
             <!-- Back Button -->
             <button id="backButton" onclick="window.location.href='lockscreen.html'">Back</button>
-
-            <div class="note-creation-wrapper">
-                <div class="creation-btns">
-                    <div class="new-note-btn">
-                        <input type="text" placeholder="Note Title">
+            <form action="" id="note-creation">
+                <div class="note-creation-wrapper">
+                    <div class="creation-btns">
+                        <div class="new-note-btn">
+                            <input id="notetitle" type="text" placeholder="Note Title">
+                        </div>
+                        <div class="new-todo-btn">
+                            <p>Folder Name</p>
+                        </div>
                     </div>
-                    <div class="new-todo-btn">
-                        <p>Folder Name</p>
+                    <div class="description-box">
+                        <input class="description-input" type="text" placeholder="Note Description">
+                    </div>
+                    <div class="delete-submit-btns">
+                        <a href="main-page.html" class="deletebtn">
+                            <p>Delete</p>
+                        </a>
+                        <div class="submitbtn">
+                            <button id="submitbtn" type="submit">Submit</button>
+                        </div>
                     </div>
                 </div>
-                <div class="description-box">
-                    <input class="description-input" type="text" placeholder="Note Description">
-                </div>
-                <div class="delete-submit-btns">
-                    <a href="main-page.html" class="deletebtn">
-                        <p>Delete</p>
-                    </a>
-                    <div class="submitbtn">
-                        <p>Submit</p>
-                    </div>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 

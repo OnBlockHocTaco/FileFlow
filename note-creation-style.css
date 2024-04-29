@@ -66,6 +66,12 @@ body, html {
     background-color: bisque;
     border-radius: 20px;
     padding: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#submitbtn{
+    cursor: pointer;
 }
 
 #backButton {
@@ -77,4 +83,9 @@ body, html {
     border-radius: 5px;
     padding: 25px;
     cursor: pointer;
+}
+
+button{
+    background: none;
+    border: none;
 }

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         '#a9def9', //Example pastel blue 
         '#e4c1f9', //Example pastel purple 
     ];
+    localStorage.setItem('defaultfolder', {})
 
     function getRandomPastelColor() {
         const randomIndex = Math.floor(Math.random() * pastelColors.length);

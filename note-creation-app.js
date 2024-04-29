@@ -47,3 +47,29 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     }
 });
+
+document.querySelector('#note-creation').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const noteTitle = document.getElementById('notetitle').value;
+    const noteDescription = document.querySelector('.description-input').value;
+
+    // const newNote = {
+    //     noteTitle: noteTitle,
+    //     noteDescription: noteDescription
+    // };
+
+    //saveFormData(newNote);
+    folderFilesDict = localStorage.getItem('defaultfolder')
+    folderFilesDict[noteTitle] = noteDescription
+    localStorage.setItem('defaultfolder', folderFilesDict);
+});
+
+// function saveFormData(newNote) {
+//     const storedFormData = JSON.parse(localStorage.getItem('storedNotes')) || [];
+
+//     storedFormData.push(newNote);
+
+//     localStorage.setItem('storedNotes', JSON.stringify(storedFormData));
+// }
+
