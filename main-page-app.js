@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     ];
 
 
+
+
     function getRandomPastelColor() {
         const randomIndex = Math.floor(Math.random() * pastelColors.length);
         return pastelColors[randomIndex];
-    }
+    };
 
     // addFolderBtn.addEventListener('click', function() {
     //     const newFolder = document.createElement('div');
@@ -33,4 +35,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //     newFolder.appendChild(anchorElement)
     //     folderList.appendChild(newFolder);
     // });
+
+    for (key in JSON.parse(localStorage.getItem('foldernames'))) {
+        createFolderElement(key); 
+    };
+
+    function createFolderElement(folderName) {
+        const newFolder = document.createElement('div');
+        newFolder.classList.add('folder-item');
+        newFolder.textContent = key; // You can modify this to set a specific folder name
+        newFolder.style.backgroundColor = getRandomPastelColor(); // Set the desired color for the new folder
+
+        const anchorElement = document.createElement('a');
+        anchorElement.href = 'internal-folder-view.html';
+
+        const newFolderButton = document.createElement('button');
+        newFolderButton.classList.add('folder-btn');
+        newFolderButton.textContent = '➡️';
+
+        anchorElement.appendChild(newFolderButton);
+        newFolder.appendChild(anchorElement);
+        folderList.appendChild(newFolder);
+
+        newFolderButton.addEventListener('click', function() {
+            localStorage.setItem('currentfolder', key);
+        });
+    }
+
 });

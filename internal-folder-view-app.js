@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+    const currentFolder = localStorage.getItem('currentfolder')
     const addFolderBtn = document.querySelector('.new-note-btn');
     const folderList = document.querySelector('.note-list');
     const pastelColors = [
@@ -35,27 +36,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
         folderList.appendChild(newFolder);
     });
 
-    loadStoredNotes('note1');
-    loadStoredNotes('note2');
-    loadStoredNotes('note3');
+    loadStoredNotes();
 
-    function loadStoredNotes (noteName) {        
-        folderContents = localStorage.getItem(noteName)
-    
-        const newNote = document.createElement('div');
-        newNote.classList.add('note-item');
-        newNote.textContent = folderContents; // You can modify this to set a specific folder name
-        newNote.style.backgroundColor = getRandomPastelColor(); // Set the desired color for the new folder
+    function loadStoredNotes () {        
+        folderContents = JSON.parse(localStorage.getItem(currentFolder))
+        console.log(folderContents)
+        if (folderContents == 'null') {
+            return;
+        }
+        for (key in folderContents) {
+            const newNote = document.createElement('div');
+            newNote.classList.add('note-item');
+            newNote.textContent = key; // You can modify this to set a specific folder name
+            newNote.style.backgroundColor = getRandomPastelColor(); // Set the desired color for the new folder
 
-        const anchorElement = document.createElement('a');
-        anchorElement.href = 'note-creation.html';  
+            const anchorElement = document.createElement('a');
+            anchorElement.href = 'note-creation.html';  
 
-        const accessNoteButton = document.createElement('button');
-        accessNoteButton.classList.add('note-btn');
-        accessNoteButton.textContent = '➡️';
+            const accessNoteButton = document.createElement('button');
+            accessNoteButton.classList.add('note-btn');
+            accessNoteButton.textContent = '➡️';
 
-        anchorElement.appendChild(accessNoteButton);
-        newNote.appendChild(anchorElement);
-        folderList.appendChild(newNote);
+            anchorElement.appendChild(accessNoteButton);
+            newNote.appendChild(anchorElement);
+            folderList.appendChild(newNote);
+        }
     };
 });

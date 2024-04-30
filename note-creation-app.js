@@ -52,21 +52,19 @@ document.querySelector('#note-creation').addEventListener('submit', function(eve
     event.preventDefault();
     const noteTitle = document.getElementById('notetitle').value;
     const noteDescription = document.querySelector('.description-input').value;
+    const currentFolder = localStorage.getItem('currentfolder')
 
-    // const newNote = {
-    //     noteTitle: noteTitle,
-    //     noteDescription: noteDescription
-    // };
+    const newNote = {
+        noteTitle: noteTitle,
+        noteDescription: noteDescription
+    };
 
-    //saveFormData(newNote);
-    localStorage.setItem(noteTitle, noteDescription);
+    saveNewNote(newNote, currentFolder);
 });
     
-// function saveFormData(newNote) {
-//     const storedFormData = JSON.parse(localStorage.getItem('storedNotes')) || [];
-
-//     storedFormData.push(newNote);
-
-//     localStorage.setItem('storedNotes', JSON.stringify(storedFormData));
-// }
+function saveNewNote(newNote, currentFolder) {
+    const currentFolderNotes = JSON.parse(localStorage.getItem(currentFolder)) || {};
+    currentFolderNotes[newNote.noteTitle] = newNote
+    localStorage.setItem(currentFolder, JSON.stringify(currentFolderNotes));
+}
 
