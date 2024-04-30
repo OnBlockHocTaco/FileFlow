@@ -11,11 +11,11 @@ document.querySelector('#folder-creation').addEventListener('submit', function(e
     };
 
     saveFolder(newFolderName)
-
-    function saveFolder(newFolderName){
-        localStorage.setItem('foldernames', [])
-        const storedFolderNames = JSON.parse(localStorage.getItem('foldernames')) || [];
-        storedFolderNames.push(newFolderName);
-        localStorage.setItem('foldernames', JSON.stringify(storedFolderNames));
-    };
+   
 });
+
+function saveFolder(newFolderName){
+    const storedFolderNames = JSON.parse(localStorage.getItem('foldernames')) || {};
+    storedFolderNames[newFolderName.folderName] = newFolderName;
+    localStorage.setItem('foldernames', JSON.stringify(storedFolderNames));
+}
