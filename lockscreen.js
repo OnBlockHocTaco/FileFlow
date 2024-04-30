@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const startButton = document.getElementById('startButton');
     const lockScreenBackground = document.querySelector('.lock-screen-background');
+    localStorage.setItem('foldernames', [])
 
     if (!startButton || !lockScreenBackground) {
         console.error("Start button or lock screen background element not found in the DOM.");

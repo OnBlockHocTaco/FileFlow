@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 document.querySelector('#note-creation').addEventListener('submit', function(event) {
     event.preventDefault();
-
     const noteTitle = document.getElementById('notetitle').value;
     const noteDescription = document.querySelector('.description-input').value;
 
@@ -60,11 +59,9 @@ document.querySelector('#note-creation').addEventListener('submit', function(eve
     // };
 
     //saveFormData(newNote);
-    folderFilesDict = localStorage.getItem('defaultfolder')
-    folderFilesDict[noteTitle] = noteDescription
-    localStorage.setItem('defaultfolder', folderFilesDict);
+    localStorage.setItem(noteTitle, noteDescription);
 });
-
+    
 // function saveFormData(newNote) {
 //     const storedFormData = JSON.parse(localStorage.getItem('storedNotes')) || [];
 

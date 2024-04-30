@@ -35,29 +35,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
         folderList.appendChild(newFolder);
     });
 
-    loadStoredNotes();
+    loadStoredNotes('note1');
+    loadStoredNotes('note2');
+    loadStoredNotes('note3');
 
-    function loadStoredNotes () {        
-        folderFilesDict = localStorage.getItem(folderName)
-        for (var key in folderFilesDict){
-            noteTitle = key;
-            noteContent = folderFilesDict[key];
-        
-            const newNote = document.createElement('div');
-            newNote.classList.add('note-item');
-            newNote.textContent = noteTitle; // You can modify this to set a specific folder name
-            newNote.style.backgroundColor = getRandomPastelColor(); // Set the desired color for the new folder
+    function loadStoredNotes (noteName) {        
+        folderContents = localStorage.getItem(noteName)
+    
+        const newNote = document.createElement('div');
+        newNote.classList.add('note-item');
+        newNote.textContent = folderContents; // You can modify this to set a specific folder name
+        newNote.style.backgroundColor = getRandomPastelColor(); // Set the desired color for the new folder
 
-            const anchorElement = document.createElement('a');
-            anchorElement.href = 'note-creation.html';
+        const anchorElement = document.createElement('a');
+        anchorElement.href = 'note-creation.html';  
 
-            const accessNoteButton = document.createElement('button');
-            accessNoteButton.classList.add('note-btn');
-            accessNoteButton.textContent = '➡️';
+        const accessNoteButton = document.createElement('button');
+        accessNoteButton.classList.add('note-btn');
+        accessNoteButton.textContent = '➡️';
 
-            anchorElement.appendChild(accessNoteButton)
-            newNote.appendChild(anchorElement)
-            folderList.appendChild(newNote);
-        }
+        anchorElement.appendChild(accessNoteButton);
+        newNote.appendChild(anchorElement);
+        folderList.appendChild(newNote);
     };
 });

@@ -9,25 +9,27 @@
 <body>
     <div class="lock-screen">
         <div class="lock-screen-background">
-            <div class="note-creation-wrapper">
-                <div class="creation-btns">
-                    <div class="new-folder-btn">
-                        <input type="text" placeholder="Enter Folder Name">
+            <form action="" id="folder-creation">
+                <div class="note-creation-wrapper">
+                    <div class="creation-btns"> 
+                        <div class="new-folder-btn">
+                            <input class='folder-title' type="text" placeholder="Enter Folder Name">
+                        </div>
+                    </div>
+                    <div class="delete-submit-btns">
+                            <a class="deletebtn" href="main-page.html">
+                                <div>
+                                    <p>Delete</p>
+                                </div>
+                            </a>
+                            <a class="submitbtn" href="main-page.html">
+                                <button type="submit">
+                                    <p>Submit</p>
+                                </button>
+                            </a>
                     </div>
                 </div>
-                <div class="delete-submit-btns">
-                        <a class="deletebtn" href="main-page.html">
-                            <div>
-                                <p>Delete</p>
-                            </div>
-                        </a>
-                        <a class="submitbtn" href="main-page.html">
-                            <div >
-                                <p>Submit</p>
-                            </div>
-                        </a>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
     <script src="folder-creation-app.js"></script>
