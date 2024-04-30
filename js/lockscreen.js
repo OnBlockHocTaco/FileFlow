@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Dim the background
         lockScreenBackground.style.opacity = '0.7'; // Dim by 30%
         // Change button image
-        startButton.style.backgroundImage = 'url("start_button_pressed.png")';
+        startButton.style.backgroundImage = 'url("images/start_button_pressed.png")';
     });
 
     startButton.addEventListener('mouseup', function() {
@@ -79,6 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Restore the background opacity
         lockScreenBackground.style.opacity = '1';
         // Restore the button image
-        startButton.style.backgroundImage = 'url("start_button_normal.png")';
+        startButton.style.backgroundImage = 'url("images/start_button_normal.png")';
     });
 });
