@@ -55,6 +55,27 @@
                 const url = `todo-creation.html?description=${encodeURIComponent(transcript)}`;
                 window.location.href = url;
              }
+              else if (data.trim() === "calendar") {
+                  //
+                  // import fetch from 'node-fetch'; // for node.js
+
+                const response = await fetch(
+                  'https://noggin.rea.gent/peaceful-lungfish-5524',
+                  {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      Authorization: 'Bearer rg_v1_mprv6y95lc6y9lnkm0q32dpg4e0b3th87tny_ngk',
+                    },
+                    body: JSON.stringify({
+                      // fill variables here.
+                      "prompt": transcript,
+                    }),
+                  }
+                ).then(response => response.text());
+              }
+            //calendar end
+            
         })
         .catch(error => {
             console.error("Error fetching API:", error); // Handle any errors
