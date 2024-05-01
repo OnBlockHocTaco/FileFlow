@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create New Folder</title>
-    <link rel="stylesheet" href="css/folder-creation-style.css">
+    <!-- <link rel="stylesheet" href="css/folder-creation-style.css"> -->
 </head>
 <body>
-    <div class="lock-screen">
-        <div class="lock-screen-background">
+    <div class="new-folder-screen">
+        <div class="new-folder-screen-background">
             <form action="" id="folder-creation">
-                <div class="note-creation-wrapper">
+                <div class="folder-creation-wrapper">
+                    
                     <div class="creation-btns"> 
                         <div class="new-folder-btn">
                             <input class='folder-title' type="text" placeholder="Enter Folder Name">
                         </div>
                     </div>
+
                     <div class="delete-submit-btns">
-                            <a class="deletebtn" href="main-page.html">
-                                <div>
-                                    <p>Delete</p>
-                                </div>
-                            </a>
-                            <a class="submitbtn" href="main-page.html">
-                                <button type="submit">
-                                    <p>Submit</p>
-                                </button>
-                            </a>
+                        <a class="deletebtn" href="main-page.html">
+                            <!-- <div>
+                                <p>Delete</p>
+                            </div> -->
+                            <button type="button">
+                                <p>Delete</p>
+                            </button>
+                        </a>
+                        <a class="submitbtn">
+                            <button type="submit">
+                                <p>Submit</p>
+                            </button>
+                        </a>
+
                     </div>
                 </div>
             </form>
@@ -35,3 +41,6 @@
     <script src="js/folder-creation-app.js"></script>
 </body>
 </html>
+
+<!-- MAKE IT SO IF AN EMPTY OhR ALREADY EXISTING FOLDER NAME WAS SUBMITTED, either prompt 
+for a real one or prompt for a non-empty one -->

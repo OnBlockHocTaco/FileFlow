@@ -73,6 +73,7 @@ document.querySelector('#note-creation').addEventListener('submit', function(eve
     const noteDescription = document.querySelector('.description-input').value;
     const selectMenu = document.querySelector('.form-select')
     const currentFolder = selectMenu.value
+    // const currentFolder = localStorage.getItem('currentFolder')
 
     const newNote = {
         noteTitle: noteTitle,
