@@ -53,8 +53,9 @@
                 window.location.href = url;
                 // window.location.href = "note-creation.html"; // Redirect to note-creation.html
             } else if (data.trim() === "todo") {
-                window.location.href = "todo-creation.html"; // Redirect to todo-creation.html
-            }
+                const url = `todo-creation.html?description=${encodeURIComponent(transcript)}`;
+                window.location.href = url;
+             }
         })
         .catch(error => {
             console.error("Error fetching API:", error); // Handle any errors
