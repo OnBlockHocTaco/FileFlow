@@ -28,6 +28,17 @@ document.addEventListener('DOMContentLoaded', async function() {
         selectMenu.appendChild(folderNameOption)
     }
 
+
+    //ADD LLM PIPING HERE
+    //GET LIST OF FOLDERS
+    folder_list = []
+    for (key in JSON.parse(localStorage.getItem('foldernames'))) {
+        // createFolderElement(key); 
+        // console.log(key);
+        folder_list.push(key);
+    };
+
+
     selectMenu.value = localStorage.getItem('currentfolder')
     chosenFolder = selectMenu.value
 
@@ -78,7 +89,13 @@ document.querySelector('#note-creation').addEventListener('submit', function(eve
     const noteTitle = document.getElementById('notetitle').value;
     const noteDescription = document.querySelector('.description-input').value;
     const selectMenu = document.querySelector('.form-select')
+
+    console.log(folder_list)
+
     const currentFolder = selectMenu.value
+
+
+
     // console.log(currentFolder)
     localStorage.setItem('currentFolder', currentFolder);
     // localStorage.setItem('currentFolder', currentFolder);
