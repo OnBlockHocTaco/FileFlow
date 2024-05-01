@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(name);
     }
-
+    document.getElementById('backButton').addEventListener('click', function() {
+        window.location.href = 'main-page.html';
+    });
     //autofill stored note contents if current note is not null
     if (localStorage.getItem('currentnote') != 'null'){
         storedNote = JSON.parse(localStorage.getItem(localStorage.getItem('currentfolder')))[localStorage.getItem('currentnote')]; // returns note json object
