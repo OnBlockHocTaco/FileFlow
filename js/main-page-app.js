@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         '#e4c1f9', //Example pastel purple 
     ];
 
-
-
-
     function getRandomPastelColor() {
         const randomIndex = Math.floor(Math.random() * pastelColors.length);
         return pastelColors[randomIndex];
@@ -63,3 +60,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
 });
+
