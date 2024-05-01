@@ -38,8 +38,13 @@ document.addEventListener('DOMContentLoaded', async function() {
         folder_list.push(key);
     };
 
+    
 
     selectMenu.value = localStorage.getItem('currentfolder')
+
+
+
+
     chosenFolder = selectMenu.value
 
     const descriptionInput = document.querySelector('.description-input');
