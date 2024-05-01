@@ -19,18 +19,29 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 
 
+    
+
     const selectMenu = document.querySelector('.form-select')
     const folderNameListDict = JSON.parse(localStorage.getItem('foldernames'))
-    for (key in folderNameListDict){
-        folderNameOption = document.createElement('option')
-        folderNameOption.value = key
-        folderNameOption.innerText = key
-        selectMenu.appendChild(folderNameOption)
+    // Populate the select menu with folder names
+    for (const key in folderNameListDict) {
+        if (folderNameListDict.hasOwnProperty(key)) {
+            const folderNameOption = document.createElement('option');
+            folderNameOption.value = key;
+            folderNameOption.innerText = key;
+            selectMenu.appendChild(folderNameOption);
+        }
     }
-    if (localStorage.getItem('currentfolder') == 'null') {
-        selectMenu.value = JSON.parse(localStorage.getItem('foldernames')).keys()[0]
+
+    // Set the default value of the select menu
+    const currentFolder = localStorage.getItem('currentfolder');
+
+    // Check for a valid current folder
+    if (currentFolder === 'null' || currentFolder === null) {
+        const firstKey = Object.keys(folderNameListDict)[0]; // Get the first key
+        selectMenu.value = firstKey; // Set the first key as the default value
     } else {
-        selectMenu.value = localStorage.getItem('currentfolder')
+        selectMenu.value = currentFolder; // Use the current folder if it's valid
     }
 
 
