@@ -30,9 +30,11 @@ https://www.youtube.com/watch?v=FxxPq2wXcK4&list=LL&index=2&t=312s
 https://www.youtube.com/watch?v=PFJNJQCU_lo&list=LL&index=1&t=795s
 
 Possible necessary dependencies:
-npm init
-npm install express ejs googleapis
-npm install -D nodemon
-nodemon index.js
+- npm init   
+- npm install express ejs googleapis    
+- npm install -D nodemon
+- nodemon index.js     
 
-If needed: sudo npm install -g --force nodemon
+If needed: 
+- If you get this error: nodemon-not-working-bash-nodemon-command-not-found, then install this:
+- sudo npm install -g --force nodemon
