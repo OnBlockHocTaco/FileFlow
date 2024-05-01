@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
     //label values
-    var currentFolder = localStorage.getItem("currentFolder");
+    var currentFolder = localStorage.getItem("currentfolder");
     var folderLabel = document.querySelector('.folders-label');
     if (currentFolder == null) {
         document.title = "Folder";
