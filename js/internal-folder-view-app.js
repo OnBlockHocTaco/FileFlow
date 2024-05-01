@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         '#e4c1f9', //Example pastel purple 
     ];
 
-    folderName = 'defaultfolder' //folder being viewed
+    const folderNameDisplay = document.querySelector('.folders-label');
+    folderNameDisplay.innerText = 'Folder: ' + currentFolder
 
     function getRandomPastelColor() {
         const randomIndex = Math.floor(Math.random() * pastelColors.length);

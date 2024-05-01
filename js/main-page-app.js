@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         '#a9def9', //Example pastel blue 
         '#e4c1f9', //Example pastel purple 
     ];
-
+    localStorage.setItem('currentfolder', 'Random')
 
 
 
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function createFolderElement(folderName) {
         const newFolder = document.createElement('div');
         newFolder.classList.add('folder-item');
-        newFolder.textContent = key; // You can modify this to set a specific folder name
+        newFolder.textContent = folderName; // You can modify this to set a specific folder name
         newFolder.style.backgroundColor = getRandomPastelColor(); // Set the desired color for the new folder
 
         const anchorElement = document.createElement('a');
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         folderList.appendChild(newFolder);
             
         newFolderButton.addEventListener('click', function() {
-            localStorage.setItem('currentfolder', key);
+            localStorage.setItem('currentfolder', folderName);
         });
         
     }
