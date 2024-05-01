@@ -28,18 +28,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         selectMenu.appendChild(folderNameOption)
     }
 
-
-    //ADD LLM PIPING HERE
-    //GET LIST OF FOLDERS
-    folder_list = []
-    for (key in JSON.parse(localStorage.getItem('foldernames'))) {
-        // createFolderElement(key); 
-        // console.log(key);
-        folder_list.push(key);
-    };
-
-    
-
     selectMenu.value = localStorage.getItem('currentfolder')
 
 
@@ -56,6 +44,40 @@ document.addEventListener('DOMContentLoaded', async function() {
             descriptionInput.value = description; // Auto-fill with the transcript
             
             try {
+                //ADD LLM PIPING HERE
+                //GET LIST OF FOLDERS
+                folder_list = []
+                for (key in JSON.parse(localStorage.getItem('foldernames'))) {
+                    // createFolderElement(key); 
+                    // console.log(key);
+                    folder_list.push(key);
+                };
+
+                console.log(folder_list);
+
+                // import fetch from 'node-fetch'; // for node.js
+
+                const folderFit = await fetch(
+                    'https://noggin.rea.gent/sheer-puma-5142',
+                    {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: 'Bearer rg_v1_7xr7sk62ptnfhsy4i8sg9d4rr0goqqv3vkmz_ngk',
+                    },
+                    body: JSON.stringify({
+                        // fill variables here.
+                        "folders": folder_list.join(", "),
+                        "description": description,
+                    }),
+                    }
+                ).then(response => response.text());
+
+                selectMenu.value = folderFit;
+
+                localStorage.setItem('currentFolder', folderFit);
+
+
                 // Call the LLM endpoint to generate a topic/title based on the description
                 const response = await fetch(
                   'https://noggin.rea.gent/selected-fox-1274',
@@ -95,9 +117,9 @@ document.querySelector('#note-creation').addEventListener('submit', function(eve
     const noteDescription = document.querySelector('.description-input').value;
     const selectMenu = document.querySelector('.form-select')
 
-    console.log(folder_list)
-
     const currentFolder = selectMenu.value
+
+    console.log(selectMenu.value)
 
 
 
