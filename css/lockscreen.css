@@ -32,7 +32,7 @@ body, html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('lock_screen_background.jpg');    
+    background-image: url('../images/lock_screen_background.jpg');    
 }
 
 #startButton {
@@ -43,7 +43,7 @@ body, html {
     padding: 0;
     width: 100px; /* Adjust button width as needed */
     height: 100px; /* Adjust button height as needed */
-    background-image: url('start_button_normal.png'); /* Normal button image */
+    background-image: url('../images/start_button_normal.png'); /* Normal button image */
     background-size: cover;
     border: none;
     cursor: pointer;

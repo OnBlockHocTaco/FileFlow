@@ -92,7 +92,7 @@ a{
     padding: 0;
     width: 100px; /* Adjust button width as needed */
     height: 100px; /* Adjust button height as needed */
-    background-image: url('start_button_normal.png'); /* Normal button image */
+    background-image: url('../images/start_button_normal.png'); /* Normal button image */
     background-size: cover;
     border: none;
     cursor: pointer;

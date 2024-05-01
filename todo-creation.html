@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Note Type Selection Screen</title>
-    <link rel="stylesheet" href="todo-creation-style.css">
+    <title>ToDo Type Selection Screen</title>
+    <link rel="stylesheet" href="css/todo-creation-style.css">
 </head>
 <body>
     <div class="lock-screen">
@@ -12,38 +12,39 @@
             <!-- Back Button -->
             <button id="backButton" onclick="window.location.href='lockscreen.html'">Back</button>
 
-
-            <div class="note-creation-wrapper">
-                <div class="creation-btns">
-                    <div class="new-todo-btn">
-                        <input type="text" placeholder="ToDo Title">
-                    </div>
-                    <div class="folder-name-btn">
-                        <p>Folder Name</p>
-                    </div>
-                </div>
-                <div class="description-box">
-                    <input class="description-input" type="text" placeholder="ToDo Description">
-                </div>
-                <div class="date-box">
-                    <input class="date-input" type="text" placeholder="date">
-                </div>
-                <div class="priority-box">
-                    <input class="priority-input" type="text" placeholder="priority">
-                </div>
-                <div class="delete-submit-btns">
-                    <a href="main-page.html" class="deletebtn">
-                        <div>
-                            <p>Delete</p>
+            <form action="" id="todo-creation">
+                <div class="note-creation-wrapper">
+                    <div class="creation-btns">
+                        <div class="new-todo-btn">
+                            <input id="todotitle" type="text" placeholder="ToDo Title">
                         </div>
-                    </a>
-                    <div class="submitbtn">
-                        <p>Submit</p>
+                        <div class="folder-name-btn">
+                            <p>Folder Name</p>
+                        </div>
+                    </div>
+                    <div class="description-box">
+                        <input class="description-input" type="text" placeholder="ToDo Description">
+                    </div>
+                    <div class="date-box">
+                        <input class="date-input" type="text" placeholder="Date">
+                    </div>
+                    <div class="priority-box">
+                        <input class="priority-input" type="text" placeholder="Priority">
+                    </div>
+                    <div class="delete-submit-btns">
+                        <a href="main-page.html" class="deletebtn">
+                            <div>
+                                <p>Delete</p>
+                            </div>
+                        </a>
+                        <div class="submitbtn">
+                            <button id="submitbtn" type="submit">Submit</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-    <script src="todo-creation-app.js"></script>
+    <script src="js/todo-creation-app.js"></script>
 </body>
 </html>
