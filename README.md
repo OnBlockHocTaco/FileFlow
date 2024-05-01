@@ -16,7 +16,7 @@ Step 2:
 
 Step 3:
 This array runs thru index.js in fileflow folder. The elements are parsed and ...
-- Make sure row1 is clear except email: https://docs.google.com/spreadsheets/d/1hCDoXMnFafAUUEXexC_Kd_57fW7NTF0bavHCbGNjwj0/edit#gid=0
+- Make sure row1 (Elements A1 to F1 are empty) is clear except email: https://docs.google.com/spreadsheets/d/1hCDoXMnFafAUUEXexC_Kd_57fW7NTF0bavHCbGNjwj0/edit#gid=0
 - MAKE SURE TO RUN nodemon index.js
 - visit ... http://localhost:1234/  and refresh
 - visit and RUN ... click start button
