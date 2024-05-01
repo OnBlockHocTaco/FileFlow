@@ -52,7 +52,7 @@ document.querySelector('#note-creation').addEventListener('submit', function(eve
     event.preventDefault();
     const noteTitle = document.getElementById('notetitle').value;
     const noteDescription = document.querySelector('.description-input').value;
-    const currentFolder = localStorage.getItem('currentfolder')
+    const currentFolder = localStorage.getItem('currentFolder')
 
     const newNote = {
         noteTitle: noteTitle,
