@@ -22,8 +22,8 @@ This array runs thru index.js in fileflow folder. The elements are parsed and ..
 - visit and RUN ... click start button
 
 Step 4:
-- https://calendar.google.com/calendar/u/0/r/month (ishangoyal100 gmail) ... PRESENTATION CALENDAR
-- igoyal@berkeley.edu email
+- https://tinyurl.com/fileflowcal ... PRESENTATION CALENDAR
+- igoyal@berkeley.edu gets an email (you can change the email to your own email as well)
 
 
 https://www.youtube.com/watch?v=FxxPq2wXcK4&list=LL&index=2&t=312s
