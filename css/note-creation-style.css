@@ -24,7 +24,7 @@ body, html {
     flex-direction: column;
 }
 
-/* .note-creation-screen-background {
+.note-creation-screen-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -33,7 +33,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-} */
+}
 
 .note-creation-wrapper {
     background-color: lightblue;
@@ -77,13 +77,17 @@ body, html {
 #backButton {
     position: absolute;
     top: 20px;
-    left: 20px;
+    right: 20px;  /* Give some space from the right edge */
     background-color: lightgray;
     border: none;
     border-radius: 5px;
-    padding: 25px;
+    padding: 5px 10px;  /* Reduced padding to avoid oversized button */
     cursor: pointer;
+    width: auto;  /* Allow width to be determined by content */
+    height: auto;  /* Allow height to be determined by content */
+    text-align: center;  /* Ensure text is centered within the button */
 }
+
 
 button{
     background: none;
