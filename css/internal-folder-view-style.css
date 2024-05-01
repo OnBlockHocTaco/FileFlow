@@ -18,6 +18,67 @@ body, html {
     justify-content: center;
 }
 
+#new-note-btn{
+    width: 100%;
+    height: 40%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#new-note-btn i{
+    padding: 2px;
+}
+
+#backButton {
+    /* position: absolute;
+    top: 20px;
+    right: 0px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40%;
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.note-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.d-grid{
+    width: 100%;
+}
+
+.page-title{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.folders-label{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.action-buttons{
+    width: 45%;
+    height: 30%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 .folder-screen {
     width: 425px;
     height: 921px;
@@ -61,7 +122,7 @@ body, html {
 }
 
 .new-note-btn{
-    cursor: pointer
+    cursor: pointer;
 }
 
 .note-item{
@@ -85,17 +146,10 @@ body, html {
     cursor: pointer; /* to indicate it's clickable */
 }
 
-#backButton {
-    position: absolute;
-    top: 20px;
-    right: 0px;
-    background-color: lightgray;
-    border: none;
-    border-radius: 5px;
-    padding: 25px;
-    cursor: pointer;
-}
 
+.section-headings{
+    width: 80%;
+}
 button{
     background: none;
     border: none;

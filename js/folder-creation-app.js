@@ -31,16 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (newFolderName == '') {
             alert("Folder name cannot be empty");
             return false
-        } else if (newFolderName in folderNames) {
-            alert("Folder name already exists");
-            return false
-        }
+        } 
         return true
 
     }
 
     function createFolderPage(folderName) {
-        localStorage.setItem('currentFolder', folderName);
+        localStorage.setItem('currentfolder', folderName);
         window.location.href = `internal-folder-view.html`;
     }
 

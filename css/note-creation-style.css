@@ -1,9 +1,34 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+.deletebtn{
+    text-decoration: none;
+}
+
+.deletebtn:hover{
+    text-decoration: none;
+}
+
+.deletebtn:focus{
+    text-decoration: none;
+}
 body, html {
     font-family: Arial, sans-serif;
     background-color: #fff;
@@ -12,6 +37,81 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#notetitle{
+    background-color: bisque;
+    border:transparent;
+    width: 60%;
+    outline: none;
+}
+
+.creation-btns{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.description-input{
+    height: 100%;
+    width: 100%;
+    background-color: bisque;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    border-radius: 20px;
+    border: none;
+    text-align: left;
+    vertical-align: top;
+}
+
+.form-select{
+    background-color: bisque;
+    margin: 4px;
+    height: 50%;
+    border-radius: 20px;
+}
+
+.delete-submit-btns{
+    display: flex;
+    justify-content:space-between;
+    height: 20%;
+    width: 100%;
+}
+
+
+.deletebtn, .submitbtn{
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    border-radius: 20px;
+    padding: 5%;
+    width: 100%;
+    height: 80%;
+    cursor: pointer;
+    margin-top: 5%;
+    text-decoration: none;
+}
+
+.new-note-btn{
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    height: 50%;
+    border-radius: 20px;
+}
+
+.description-box{
+    background-color: bisque;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    height: 50%;
+    border-radius: 20px;
 }
 
 .note-creation-screen {
@@ -46,29 +146,11 @@ body, html {
     padding-top: 40px; /* Added top padding to prevent cut-off */
 }
 
-.creation-btns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
-.description-box {
-    flex: 2;
-}
 
-.delete-submit-btns {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2%;
-}
 
-.deletebtn, .submitbtn {
-    background-color: bisque;
-    border-radius: 20px;
-    padding: 5px;
-    text-decoration: none;
-    cursor: pointer;
-}
+
+
 
 #submitbtn{
     cursor: pointer;

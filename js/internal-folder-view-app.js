@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    const addNoteBtn = document.querySelector('.new-note-btn');
+    const addNoteBtn = document.querySelector('#new-note-btn');
     const noteList = document.querySelector('.note-list');
 
     const pastelColors = [
@@ -68,16 +68,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 newNote.classList.add('note-item');
                 newNote.textContent = noteTitle;
                 newNote.style.backgroundColor = getRandomPastelColor();
-                const anchorElement = document.createElement('a');
-                anchorElement.href = 'note-creation.html';
-                const accessNoteButton = document.createElement('button');
-                accessNoteButton.classList.add('note-btn');
-                accessNoteButton.textContent = '➡️';
-                anchorElement.appendChild(accessNoteButton);
-                newNote.appendChild(anchorElement);
+                newNote.style.cursor = 'pointer';
                 folderList.appendChild(newNote);
-                accessNoteButton.addEventListener('click', () => {
+
+                //optional button
+                const folderIcon = document.createElement('i');
+                folderIcon.classList.add('fa-solid', 'fa-arrow-right', 'folder-btn', 'fa-lg');
+                folderIcon.style.pointerEvents = 'none'; // Prevents the icon from capturing click events
+                newNote.appendChild(folderIcon);
+
+                newNote.addEventListener('click', () => {
                     localStorage.setItem('currentnote', noteTitle);
+                    window.location.href = 'note-creation.html';
                 });
             } else { 
                 const folderList = document.querySelector('.note-list');            
@@ -86,16 +88,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 newNote.classList.add('note-item');
                 newNote.textContent = noteTitle;
                 newNote.style.backgroundColor = getRandomPastelColor();
-                const anchorElement = document.createElement('a');
-                anchorElement.href = 'todo-creation.html';
-                const accessNoteButton = document.createElement('button');
-                accessNoteButton.classList.add('note-btn');
-                accessNoteButton.textContent = '➡️';
-                anchorElement.appendChild(accessNoteButton);
-                newNote.appendChild(anchorElement);
+                newNote.style.cursor = 'pointer';
                 folderList.appendChild(newNote);
-                accessNoteButton.addEventListener('click', () => {
+
+                const folderIcon = document.createElement('i');
+                folderIcon.classList.add('fa-solid', 'fa-arrow-right', 'folder-btn', 'fa-lg');
+                folderIcon.style.pointerEvents = 'none'; // Prevents the icon from capturing click events
+                newNote.appendChild(folderIcon);
+                
+                newNote.addEventListener('click', () => {
                     localStorage.setItem('currentnote', noteTitle);
+                    window.location.href = 'note-creation.html';
                 });
             }
 

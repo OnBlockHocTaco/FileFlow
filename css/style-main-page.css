@@ -18,6 +18,31 @@ body, html {
     justify-content: center;
 }
 
+.folder-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.d-grid{
+    width: 100%;
+}
+
+.page-title{
+    font-weight: bold;
+    font-style: italic;
+}
+
+.folders-label{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.action-buttons{
+    width: 40%;
+    margin: 10px;
+}
+
 .main-screen {
     width: 425px;
     height: 921px;
@@ -77,15 +102,11 @@ body, html {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.folder-btn{
-    right: 10px; /* distance from the right edge */
-    top: 50%;
-    transform: translateY(-50%); /* center it vertically */
-    width: 20px; /* square dimensions */
-    height: 20px;
-    padding: 0;
-    border: 1px solid #000; /* a simple border */
-    background-color: #fff; /* a contrasting background */
-    cursor: pointer; /* to indicate it's clickable */
+
+#new-folder-btn i{
+    padding: 5px;
 }
 
+#new-note-btn i{
+    padding: 5px;
+}

@@ -27,8 +27,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         folderNameOption.innerText = key
         selectMenu.appendChild(folderNameOption)
     }
-
-    selectMenu.value = localStorage.getItem('currentfolder')
+    if (localStorage.getItem('currentfolder') == 'null') {
+        selectMenu.value = JSON.parse(localStorage.getItem('foldernames')).keys()[0]
+    } else {
+        selectMenu.value = localStorage.getItem('currentfolder')
+    }
 
 
 
