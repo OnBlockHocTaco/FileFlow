@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const addFolderBtn = document.querySelector('#new-folder-btn');
     const addNoteBtn = document.querySelector('#new-note-btn')
     const folderList = document.querySelector('.folder-list');
+    const homeicon = document.querySelector('.home-icon');
     const pastelColors = [
         '#ffd7d5', //pastel pink 
         '#ffebb7', //pastel orange
@@ -20,6 +21,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     ];
     localStorage.setItem('currentfolder', 'null');
     localStorage.setItem('currentnote', 'null');
+
+    homeicon.addEventListener('click', () => {
+        window.location.href = 'lockscreen.html';
+    });
 
     addFolderBtn.addEventListener('click', () => {
         window.location.href = `folder-creation.html`;

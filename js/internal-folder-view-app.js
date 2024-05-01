@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //label values
     var currentFolder = localStorage.getItem("currentfolder");
     var folderLabel = document.querySelector('.folders-label');
+    const homeicon = document.querySelector('.home-icon');  
+    homeicon.addEventListener('click', () => {
+        window.location.href = 'lockscreen.html';
+    });
     if (currentFolder == null) {
         document.title = "Folder";
     } else {
