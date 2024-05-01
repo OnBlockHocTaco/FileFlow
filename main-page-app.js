@@ -56,10 +56,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         anchorElement.appendChild(newFolderButton);
         newFolder.appendChild(anchorElement);
         folderList.appendChild(newFolder);
-
+            
         newFolderButton.addEventListener('click', function() {
             localStorage.setItem('currentfolder', key);
         });
+        
     }
 
 });
