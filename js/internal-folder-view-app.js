@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // newNote.appendChild(anchorElement)
         // noteList.appendChild(newNote);
 
-        window.location.href = 'note-type-selection.html';
+        window.location.href = 'note-creation.html';
     });
 
     loadStoredNotes();
