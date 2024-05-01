@@ -66,7 +66,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         } 
     }
 
-    
+    document.getElementById('backButton').addEventListener('click', function() {
+        window.location.href = 'main-page.html';
+    });
 });
 
 document.querySelector('#note-creation').addEventListener('submit', function(event) {
