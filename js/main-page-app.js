@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         '#e4c1f9', //Example pastel purple 
     ];
     localStorage.setItem('currentfolder', 'Random');
-    localStorage.setItem('currentnote', null);
+    localStorage.setItem('currentnote', 'null');
 
 
 
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         folderList.appendChild(newFolder);
             
         newFolderButton.addEventListener('click', function() {
-            localStorage.setItem('currentFolder', folderName);
+            localStorage.setItem('currentfolder', folderName);
             window.location.href = `internal-folder-view.html`;
         });
         

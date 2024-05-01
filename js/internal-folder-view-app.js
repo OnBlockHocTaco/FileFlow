@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
         for (key in folderContents) {
             // NOTE: key is equal to the filenames in the folder
+            const folderList = document.querySelector('.note-list')
             const newNote = document.createElement('div');
             newNote.classList.add('note-item');
             newNote.textContent = key; // You can modify this to set a specific folder name

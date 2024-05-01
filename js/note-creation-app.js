@@ -6,8 +6,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 
     //autofill stored note contents if current note is not null
-    if (localStorage.getItem('currentnote') != null){
+    if (localStorage.getItem('currentnote') != 'null'){
+        storedNote = JSON.parse(localStorage.getItem(localStorage.getItem('currentfolder')))[localStorage.getItem('currentnote')]; // returns note json object
+        const noteTitle = document.querySelector('#notetitle');
+        const noteDescription = document.querySelector('.description-input');
         
+        noteTitle.placeholder = storedNote.noteTitle;
+        noteDescription.placeholder = storedNote.noteDescription;
+
     }
 
 
