@@ -61,38 +61,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
         for (key in folderContents) {
 
-            const folderList = document.querySelector('.note-list');            
-            const noteTitle = folderContents[key].noteTitle;
-            const newNote = document.createElement('div');
-            newNote.classList.add('note-item');
-            newNote.textContent = noteTitle;
-            newNote.style.backgroundColor = getRandomPastelColor();
-            const anchorElement = document.createElement('a');
-            anchorElement.href = 'note-creation.html';
-            const accessNoteButton = document.createElement('button');
-            accessNoteButton.classList.add('note-btn');
-            accessNoteButton.textContent = '➡️';
-            anchorElement.appendChild(accessNoteButton);
-            newNote.appendChild(anchorElement);
-            folderList.appendChild(newNote);
+            if (folderContents[key].isNote) {
+                const folderList = document.querySelector('.note-list');            
+                const noteTitle = folderContents[key].noteTitle;
+                const newNote = document.createElement('div');
+                newNote.classList.add('note-item');
+                newNote.textContent = noteTitle;
+                newNote.style.backgroundColor = getRandomPastelColor();
+                const anchorElement = document.createElement('a');
+                anchorElement.href = 'note-creation.html';
+                const accessNoteButton = document.createElement('button');
+                accessNoteButton.classList.add('note-btn');
+                accessNoteButton.textContent = '➡️';
+                anchorElement.appendChild(accessNoteButton);
+                newNote.appendChild(anchorElement);
+                folderList.appendChild(newNote);
+            } else { 
+                const folderList = document.querySelector('.note-list');            
+                const noteTitle = folderContents[key].todoTitle;
+                const newNote = document.createElement('div');
+                newNote.classList.add('note-item');
+                newNote.textContent = noteTitle;
+                newNote.style.backgroundColor = getRandomPastelColor();
+                const anchorElement = document.createElement('a');
+                anchorElement.href = 'todo-creation.html';
+                const accessNoteButton = document.createElement('button');
+                accessNoteButton.classList.add('note-btn');
+                accessNoteButton.textContent = '➡️';
+                anchorElement.appendChild(accessNoteButton);
+                newNote.appendChild(anchorElement);
+                folderList.appendChild(newNote);
+            }
+
             
-
-            console.log(key);
-            // const newNote = document.createElement('div');
-            // newNote.classList.add('note-item');
-            // newNote.textContent = key; // You can modify this to set a specific folder name
-            // newNote.style.backgroundColor = getRandomPastelColor(); // Set the desired color for the new folder
-
-            // const anchorElement = document.createElement('a');
-            // anchorElement.href = 'note-creation.html';  
-
-            // const accessNoteButton = document.createElement('button');
-            // accessNoteButton.classList.add('note-btn');
-            // accessNoteButton.textContent = '➡️';
-
-            // anchorElement.appendChild(accessNoteButton);
-            // newNote.appendChild(anchorElement);
-            // folderList.appendChild(newNote);
         }
     };
 });

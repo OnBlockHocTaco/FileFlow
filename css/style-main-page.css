@@ -29,18 +29,22 @@ body, html {
 }
 
 
-.main-screen-background {
+/* .main-screen-background {
     position: absolute;
     width: 100%;
     height: 100%;
     background-size: cover;
-    background-color: #eaeaea;
-}
-
-.main-screen-background{
+    /* background-color: #eaeaea; */
+    background-color: rgba(234, 234, 234, 0.5); /* 50% opacity */
     display: flex;
     flex-direction: column;
-}
+    
+} */
+
+/* .main-screen-background{
+    display: flex;
+    flex-direction: column;
+} */
 
 .header{
     display: flex;

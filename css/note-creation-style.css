@@ -24,7 +24,7 @@ body, html {
     flex-direction: column;
 }
 
-.note-creation-screen-background {
+/* .note-creation-screen-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -33,7 +33,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .note-creation-wrapper {
     background-color: lightblue;

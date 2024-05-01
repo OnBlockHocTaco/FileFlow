@@ -68,12 +68,15 @@ document.querySelector('#note-creation').addEventListener('submit', function(eve
     const noteDescription = document.querySelector('.description-input').value;
     const selectMenu = document.querySelector('.form-select')
     const currentFolder = selectMenu.value
-    
+    // console.log(currentFolder)
+    localStorage.setItem('currentFolder', currentFolder);
+    // localStorage.setItem('currentFolder', currentFolder);
 
     const newNote = {
         noteTitle: noteTitle,
         noteFolder: currentFolder,
-        noteDescription: noteDescription
+        noteDescription: noteDescription,
+        isNote: true,
     };
 
     saveNewNote(newNote, currentFolder);
