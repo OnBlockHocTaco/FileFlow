@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentFolder = 'Random';
     const startButton = document.getElementById('startButton');
     const lockScreenBackground = document.querySelector('.lock-screen-background');
-    localStorage.setItem('currentFolder', currentFolder)
+    localStorage.setItem('currentfolder', currentFolder)
     localStorage.setItem('foldernames', JSON.stringify({"Random":{"folderName":"Random"}}))
     localStorage.setItem('currentnote', null)
 

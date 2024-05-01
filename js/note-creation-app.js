@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         selectMenu.appendChild(folderNameOption)
     }
 
-    //selectMenu.value = localStorage.getItem('currentfolder')
+    selectMenu.value = localStorage.getItem('currentfolder')
     chosenFolder = selectMenu.value
 
     const descriptionInput = document.querySelector('.description-input');
