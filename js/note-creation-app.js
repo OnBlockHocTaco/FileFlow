@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         noteTitle.placeholder = storedNote.noteTitle;
         noteDescription.placeholder = storedNote.noteDescription;
-
     }
+
 
 
     const selectMenu = document.querySelector('.form-select')

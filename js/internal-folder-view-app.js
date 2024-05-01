@@ -76,6 +76,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 anchorElement.appendChild(accessNoteButton);
                 newNote.appendChild(anchorElement);
                 folderList.appendChild(newNote);
+                accessNoteButton.addEventListener('click', () => {
+                    localStorage.setItem('currentnote', noteTitle);
+                });
             } else { 
                 const folderList = document.querySelector('.note-list');            
                 const noteTitle = folderContents[key].todoTitle;
@@ -91,6 +94,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 anchorElement.appendChild(accessNoteButton);
                 newNote.appendChild(anchorElement);
                 folderList.appendChild(newNote);
+                accessNoteButton.addEventListener('click', () => {
+                    localStorage.setItem('currentnote', noteTitle);
+                });
             }
 
             
