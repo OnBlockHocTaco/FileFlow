@@ -23,25 +23,30 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     const selectMenu = document.querySelector('.form-select')
     const folderNameListDict = JSON.parse(localStorage.getItem('foldernames'))
-    // Populate the select menu with folder names
-    for (const key in folderNameListDict) {
-        if (folderNameListDict.hasOwnProperty(key)) {
-            const folderNameOption = document.createElement('option');
-            folderNameOption.value = key;
-            folderNameOption.innerText = key;
-            selectMenu.appendChild(folderNameOption);
+    if (folderNameListDict && typeof folderNameListDict === 'object') {
+        // Populate the select menu with folder names
+        for (const key in folderNameListDict) {
+            if (folderNameListDict.hasOwnProperty(key)) {
+                const folderNameOption = document.createElement('option');
+                folderNameOption.value = key;
+                folderNameOption.innerText = key;
+                selectMenu.appendChild(folderNameOption);
+            }
         }
-    }
-
-    // Set the default value of the select menu
-    const currentFolder = localStorage.getItem('currentfolder');
-
-    // Check for a valid current folder
-    if (currentFolder === 'null' || currentFolder === null) {
-        const firstKey = Object.keys(folderNameListDict)[0]; // Get the first key
-        selectMenu.value = firstKey; // Set the first key as the default value
+    
+        const currentFolder = localStorage.getItem('currentfolder');
+    
+        // Check for a valid current folder and ensure `folderNameListDict` has keys
+        if (currentFolder === 'null' || currentFolder === null) {
+            if (Object.keys(folderNameListDict).length > 0) {
+                const firstKey = Object.keys(folderNameListDict)[0]; // Get the first key
+                selectMenu.value = firstKey; // Set the first key as the default value
+            }
+        } else {
+            selectMenu.value = currentFolder; // Use the current folder if it's valid
+        }
     } else {
-        selectMenu.value = currentFolder; // Use the current folder if it's valid
+        console.error("folderNameListDict is undefined or not a valid object.");
     }
 
 
