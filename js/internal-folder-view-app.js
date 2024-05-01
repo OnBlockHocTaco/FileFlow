@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         for (key in folderContents) {
+            // NOTE: key is equal to the filenames in the folder
             const newNote = document.createElement('div');
             newNote.classList.add('note-item');
             newNote.textContent = key; // You can modify this to set a specific folder name
@@ -56,6 +57,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const accessNoteButton = document.createElement('button');
             accessNoteButton.classList.add('note-btn');
             accessNoteButton.textContent = '➡️';
+            accessNoteButton.addEventListener('click', () => {
+                localStorage.setItem('currentnote', key);
+            });
 
             anchorElement.appendChild(accessNoteButton);
             newNote.appendChild(anchorElement);

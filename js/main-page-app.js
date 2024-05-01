@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         '#a9def9', //Example pastel blue 
         '#e4c1f9', //Example pastel purple 
     ];
-    localStorage.setItem('currentfolder', 'Random')
+    localStorage.setItem('currentfolder', 'Random');
+    localStorage.setItem('currentnote', null);
 
 
 

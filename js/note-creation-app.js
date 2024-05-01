@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         return urlParams.get(name);
     }
 
+    //autofill stored note contents if current note is not null
+    if (localStorage.getItem('currentnote') != null){
+        
+    }
+
+
     const selectMenu = document.querySelector('.form-select')
     const folderNameListDict = JSON.parse(localStorage.getItem('foldernames'))
     for (key in folderNameListDict){
