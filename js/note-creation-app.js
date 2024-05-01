@@ -5,6 +5,17 @@ document.addEventListener('DOMContentLoaded', async function() {
         return urlParams.get(name);
     }
 
+    const selectMenu = document.querySelector('.form-select')
+    const folderNameListDict = JSON.parse(localStorage.getItem('foldernames'))
+    for (key in folderNameListDict){
+        folderNameOption = document.createElement('option')
+        folderNameOption.value = key
+        folderNameOption.innerText = key
+        selectMenu.appendChild(folderNameOption)
+    }
+
+    selectMenu.value = localStorage.getItem('currentfolder')
+
     const descriptionInput = document.querySelector('.description-input');
     const noteTitleInput = document.querySelector('.new-note-btn input');
 
@@ -50,9 +61,12 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 document.querySelector('#note-creation').addEventListener('submit', function(event) {
     event.preventDefault();
+    selectedFolder = document.querySelector('.form-select').value;
+
     const noteTitle = document.getElementById('notetitle').value;
     const noteDescription = document.querySelector('.description-input').value;
-    const currentFolder = localStorage.getItem('currentfolder')
+    const selectMenu = document.querySelector('.form-select')
+    const currentFolder = selectMenu.value
 
     const newNote = {
         noteTitle: noteTitle,
@@ -67,4 +81,5 @@ function saveNewNote(newNote, currentFolder) {
     currentFolderNotes[newNote.noteTitle] = newNote
     localStorage.setItem(currentFolder, JSON.stringify(currentFolderNotes));
 }
+
 

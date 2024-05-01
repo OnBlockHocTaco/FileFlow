@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function loadStoredNotes () {        
         folderContents = JSON.parse(localStorage.getItem(currentFolder))
-        console.log(folderContents)
         if (folderContents == 'null') {
             return;
         }
