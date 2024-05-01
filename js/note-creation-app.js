@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
                 selectMenu.value = folderFit;
 
-                localStorage.setItem('currentFolder', folderFit);
+                localStorage.setItem('currentfolder', folderFit);
 
 
                 // Call the LLM endpoint to generate a topic/title based on the description
@@ -124,7 +124,7 @@ document.querySelector('#note-creation').addEventListener('submit', function(eve
 
 
     // console.log(currentFolder)
-    localStorage.setItem('currentFolder', currentFolder);
+    localStorage.setItem('currentfolder', currentFolder);
     // localStorage.setItem('currentFolder', currentFolder);
 
     const newNote = {
