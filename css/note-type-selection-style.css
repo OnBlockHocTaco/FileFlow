@@ -98,3 +98,9 @@ a{
     cursor: pointer;
     border-radius: 50px;
 }
+
+#backbutton{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     for (key in JSON.parse(localStorage.getItem('foldernames'))) {
         // createFolderElement(key); 
         // console.log(key);
-        createFolderElement(key);
+        createFolderElement(key);   
     };
 
     function createFolderElement(folderName) {
