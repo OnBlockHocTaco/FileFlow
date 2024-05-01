@@ -37,7 +37,7 @@ input{
 }
 
 
-.lock-screen-background {
+/* .lock-screen-background {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -46,7 +46,7 @@ input{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .note-creation-wrapper{
     background-color: lightblue;

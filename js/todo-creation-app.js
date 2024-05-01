@@ -5,6 +5,15 @@ document.addEventListener('DOMContentLoaded', async function() {
         return urlParams.get(name);
     }
 
+    const selectMenu = document.querySelector('.form-select')
+    const folderNameListDict = JSON.parse(localStorage.getItem('foldernames'))
+    for (key in folderNameListDict){
+        folderNameOption = document.createElement('option')
+        folderNameOption.value = key
+        folderNameOption.innerText = key
+        selectMenu.appendChild(folderNameOption)
+    }
+
     const descriptionInput = document.querySelector('.description-input');
     const todoTitleInput = document.querySelector('.new-todo-btn input');
 
@@ -54,27 +63,34 @@ document.addEventListener('DOMContentLoaded', async function() {
 
             const todoTitle = document.querySelector('.new-todo-btn input').value;
             const todoDescription = document.querySelector('.description-input').value;
+            const selectedFolder = document.querySelector('.form-select').value;
+            const todoDueDate = document.querySelector('.date-input').value;
+            const todoPriority = document.querySelector('.priority-input').value;
+            
+            localStorage.setItem('currentFolder', selectedFolder);
 
-            try {
-                const response = await fetch('https://example.com/save-todo', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        title: todoTitle,
-                        description: todoDescription
-                    })
-                });
-
-                if (response.ok) {
-                    console.log('ToDo saved successfully.');
-                } else {
-                    console.error('Failed to save ToDo.');
-                }
-            } catch (error) {
-                console.error('Error saving ToDo:', error);
+            const newToDo = {
+                todoTitle: todoTitle,
+                todoDescription: todoDescription,
+                todoFolder: selectedFolder,
+                todoDueDate: todoDueDate,
+                todoPriority: todoPriority,
+                isNote: false,
             }
+            
+            saveNewToDo(newToDo, selectedFolder);
+
+            window.location.href = 'internal-folder-view.html';
+
+
+
         });
     }
 });
+
+
+function saveNewToDo(newNote, currentFolder) {
+    const currentFolderNotes = JSON.parse(localStorage.getItem(currentFolder)) || {};
+    currentFolderNotes[newNote.todoTitle] = newNote
+    localStorage.setItem(currentFolder, JSON.stringify(currentFolderNotes));
+}

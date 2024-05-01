@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         selectMenu.appendChild(folderNameOption)
     }
 
-    selectMenu.value = localStorage.getItem('currentfolder')
+    //selectMenu.value = localStorage.getItem('currentfolder')
+    chosenFolder = selectMenu.value
 
     const descriptionInput = document.querySelector('.description-input');
     const noteTitleInput = document.querySelector('.new-note-btn input');
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             } catch (error) {
                 console.error("Error fetching generated topic:", error);
             }
-        }
+        } 
     }
 
     const backButton = document.getElementById('backButton');
@@ -79,14 +80,20 @@ document.querySelector('#note-creation').addEventListener('submit', function(eve
     const noteDescription = document.querySelector('.description-input').value;
     const selectMenu = document.querySelector('.form-select')
     const currentFolder = selectMenu.value
-    // const currentFolder = localStorage.getItem('currentFolder')
+    // console.log(currentFolder)
+    localStorage.setItem('currentFolder', currentFolder);
+    // localStorage.setItem('currentFolder', currentFolder);
 
     const newNote = {
         noteTitle: noteTitle,
-        noteDescription: noteDescription
+        noteFolder: currentFolder,
+        noteDescription: noteDescription,
+        isNote: true,
     };
 
     saveNewNote(newNote, currentFolder);
+
+    window.location.href = 'internal-folder-view.html';
 });
     
 function saveNewNote(newNote, currentFolder) {

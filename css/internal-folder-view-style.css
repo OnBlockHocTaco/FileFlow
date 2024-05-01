@@ -85,3 +85,18 @@ body, html {
     cursor: pointer; /* to indicate it's clickable */
 }
 
+#backButton {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+}
+
+button{
+    background: none;
+    border: none;
+}
