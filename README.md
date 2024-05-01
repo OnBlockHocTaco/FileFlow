@@ -19,7 +19,7 @@ This array runs thru index.js in fileflow folder. The elements are parsed and ..
 - Make sure row1 is clear except email: https://docs.google.com/spreadsheets/d/1hCDoXMnFafAUUEXexC_Kd_57fW7NTF0bavHCbGNjwj0/edit#gid=0
 - MAKE SURE TO RUN nodemon index.js
 - visit ... http://localhost:1234/  and refresh
-- visit and RUN ... https://script.google.com/u/0/home/projects/1Pf4sDD5Et7sIjvGWGp6v83Yxa_SUH75eaoeQyeSk6yvfmQeOugkY6SAg/edit
+- visit and RUN ... click start button
 
 Step 4:
 - https://calendar.google.com/calendar/u/0/r/month (ishangoyal100 gmail) ... PRESENTATION CALENDAR
