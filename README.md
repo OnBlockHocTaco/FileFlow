@@ -29,6 +29,7 @@ Step 4:
 https://www.youtube.com/watch?v=FxxPq2wXcK4&list=LL&index=2&t=312s
 https://www.youtube.com/watch?v=PFJNJQCU_lo&list=LL&index=1&t=795s
 
+Possible necessary dependencies:
 npm init
 npm install express ejs googleapis
 npm install -D nodemon
