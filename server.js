@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Try grabbing the PORT and HOST variables from the environment, or use localhost:8000 as a default.
-const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080;
 const HOST = process.env.HOST ?? "localhost";
 
 // `app` refers to this particular server, the one we'll add behavior to.

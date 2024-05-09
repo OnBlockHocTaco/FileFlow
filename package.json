@@ -1,15 +1,22 @@
 {
-  "name": "cs160-starter-code-p2",
+  "name": "fileflow",
   "version": "1.0.0",
-  "description": "Hello friend!",
-  "main": "server.js",
-  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "CS 160 course staff",
-  "license": "UNLICENSED",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
-  }
+    "cors": "^2.8.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "google-spreadsheet": "^4.1.1",
+    "googleapis": "^135.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "keywords": [],
+  "description": ""
 }
